@@ -69,4 +69,3 @@ class Player(entity.Entity):
                         app.agent_1_reward = -0.7
                     elif agent == "agent_2":
                         app.agent_2_reward = -0.7
-

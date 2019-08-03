@@ -37,8 +37,8 @@ class Ball(entity.Entity):
         self.rect.x = 500
         self.rect.y = 500
 
-        x_speeds = [random.randint(-2, -1), random.randint(1,2)]
+        x_speeds = [random.randint(-1, -1), random.randint(1,1)]
         self.x_speed = random.choice(x_speeds)
 
-        y_speeds = [random.randint(-2, -1), random.randint(1,2)]
+        y_speeds = [random.randint(-1, -1), random.randint(1,1)]
         self.y_speed = random.choice(y_speeds)

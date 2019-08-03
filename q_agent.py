@@ -21,7 +21,7 @@ class QAgent():
         self.DISCOUNT = 0.95
         self.EPISODES = 15_000
 
-        self.DISCRETE_OS_SIZE = [2] * len(app.observe())
+        self.DISCRETE_OS_SIZE = [20] * len(app.observe())
         self.DISCRETE_OS_WIN_SIZE = (app.observe_max() - app.observe_min()) / self.DISCRETE_OS_SIZE
         
         self.START_EPSILON_DECAYING = 1
@@ -30,7 +30,7 @@ class QAgent():
         self.epsilon_decay_value = self.epsilon / (self.END_EPSILON_DECAYING
                                                    - self.START_EPSILON_DECAYING)
 
-        self.SHOW_EVERY = 50
+        self.SHOW_EVERY = 35
 
         self.q_table = []
         self.create_q_table()
@@ -39,7 +39,7 @@ class QAgent():
         '''
         Generates an intial Q Table.
         '''
-        self.q_table = np.random.uniform(low=-2, high=1, 
+        self.q_table = np.random.uniform(low=-1, high=1, 
                                          size=(self.DISCRETE_OS_SIZE + [2]))
 
     def get_discrete_state(self, state):

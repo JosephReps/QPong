@@ -47,7 +47,7 @@ class PongApp():
         self.pong_ball = ball.Ball(500, 100, 10, 10, self.window, WHITE, -1, 1)
 
         self.score_board = scoreboard.Scoreboard(500, 10, 
-                           str(self.player_1.score) + str(self.player_2.score), 
+                           str(self.player_1.score) + " - " + str(self.player_2.score), 
                            30, self.window)
 
         self.agent_1 = q_agent.QAgent(self)
@@ -98,7 +98,7 @@ class PongApp():
 
                     pygame.display.update()
             
-            print("P1: ", self.p1_wins, "P2: ", self.p2_wins)
+            print("P1: ", self.p1_wins, " - P2: ", self.p2_wins)
             print(i)
             
     def event_handler(self):
@@ -133,14 +133,14 @@ class PongApp():
             self.player_2.score += 1 
             self.agent_1_reward = -1    
             self.p2_wins += 1      
-            self.score_board.message = str(self.player_1.score) + str(self.player_2.score)
+            self.score_board.message = str(self.player_1.score) + "-" + str(self.player_2.score)
             self.pong_ball.reset_ball()
             self.running = False
 
         elif self.pong_ball.rect.x > 1000:
             self.player_1.score += 1
             self.agent_2_reward = -1
-            self.score_board.message = str(self.player_1.score) + str(self.player_2.score)
+            self.score_board.message = str(self.player_1.score) + "-" + str(self.player_2.score)
             self.p1_wins += 1
             self.running = False
             self.pong_ball.reset_ball()
